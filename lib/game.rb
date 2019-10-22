@@ -37,7 +37,8 @@ class Game
   def print_scorecard
     @player_list.each_with_index do |p, ind|
       color = ind == @current_index ? :yellow : :white
-      puts "#{name_string(p.name)}: ".colorize(color) +  ("*" * p.dollars).colorize(:green)
+      pre = ind == @current_index ? "> " : "  "
+      puts "#{pre}#{name_string(p.name)}: ".colorize(color) +  ("*" * p.dollars).colorize(:green)
     end
     puts "\n\nCurrent_pot: " + "#{"*" * @pot}".colorize(:green)
   end
